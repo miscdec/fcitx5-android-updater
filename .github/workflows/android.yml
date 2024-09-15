@@ -39,5 +39,6 @@ jobs:
       with:
         name: debug-apk
         path: |
-          ${{github.workspace}}/build/outputs/apk/debug/*.apk
+          ${{github.workspace}}/build/intermediates/apk/debug/*
+          
           
