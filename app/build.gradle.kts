@@ -36,7 +36,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = createSigningConfigFromEnv(signingConfigs)
+           // signingConfig = createSigningConfigFromEnv(signingConfigs)
         }
         debug {
             applicationIdSuffix = ".debug"
