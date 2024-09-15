@@ -33,7 +33,7 @@ jobs:
       with:
         name: release-apk
         path: |
-          ${{github.workspace}}/build/outputs/apk/release/*.apk
+          ${{github.workspace}}/build/outputs/**
           
     - uses: actions/upload-artifact@v4
       with:
