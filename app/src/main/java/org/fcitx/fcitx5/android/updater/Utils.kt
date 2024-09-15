@@ -13,6 +13,8 @@ import java.io.IOException
 import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 import kotlin.math.pow
+import java.io.File
+import android.os.Build
 
 suspend fun Call.await() = suspendCancellableCoroutine<Response> {
     enqueue(object : Callback {
