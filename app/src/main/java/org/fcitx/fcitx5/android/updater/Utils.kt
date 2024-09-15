@@ -67,7 +67,12 @@ fun parseVersionNumber(raw: String): Result<Triple<String, Int, String>> = runCa
 
 val httpClient = OkHttpClient()
 
-val externalDir by lazy { UpdaterApplication.context.getExternalFilesDir(null)!! }
+val externalDir =
+    //如果是华为机型，硬编码到、/storage/emulated/0/Android/data/org.fcitx.fcitx5.android.updater/files
+    if (Build.MANUFACTURER == "HUAWEI")
+        File("/storage/emulated/0/Android/data/" +
+                UpdaterApplication.context.packageName + "/files")
+    else UpdaterApplication.context.getExternalFilesDir(null)!!
 
 inline fun <T, U> Result<T>.flatMap(block: (T) -> Result<U>) =
     if (isFailure)
